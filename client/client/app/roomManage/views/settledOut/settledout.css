@@ -1,0 +1,39 @@
+.room-check{overflow: hidden;width: 100% !important;}
+.check-main{width: 95.8%;margin:0 auto;}
+.room-main{border: 1px solid #cfcfcf;min-height: 500px;padding:12px 0 40px 0;background: #fff;position: relative;}
+.room-kind2{width:200px !important;margin-right:20px;}
+.room-pageup{font-size: 2em;color: #b9b9b9;}
+.room-pageup:hover{font-size: 2em;color: #2772c6;}
+.room-l{width: 7%;padding:200px 0 0 2%;}
+.room-ul{padding:0 !important;}
+.room-con{width: 86%;}
+.floor{width:107px;height:34px;padding-bottom:38px;text-align:center;border-bottom: 6px solid #fff;color: #9a9a9a;font-size:18px;font-family: Microsoft YaHei;font-weight: bold;margin-right: 57px;display: inline-block;}
+.floor:hover{width:107px;height:34px;padding-bottom:38px;text-align:center;border-bottom: 6px solid #2772c6;color: #2772c6;font-size:18px;font-family: Microsoft YaHei;font-weight: bold;margin-right: 57px;display: inline-block;}
+.floor-active{width:107px;height:34px;padding-bottom:38px;text-align:center;border-bottom: 6px solid #2772c6;color: #2772c6;font-size:18px;font-family: Microsoft YaHei;font-weight: bold;margin-right: 57px;display: inline-block;}
+.room-num{width: 6.7%;height:54px;line-height: 25px;text-align:center;color:#fff;font-size:13px;font-family: Microsoft YaHei;margin:10px 10px 0 0;cursor: pointer;position: relative;}
+.room-mess{color: #000;font-size:14px;font-family: Microsoft YaHei;font-weight: bold;display: inline-block;width: 85px;text-align: right;}
+.zhu{color: #888888;font-size:14px;font-family: Microsoft YaHei;font-weight: bold;margin:0 10px;}
+.zhu-num{color: #f46618;font-size:14px;font-family: Microsoft YaHei;font-weight: bold;display: inline-block;width: 50px;}
+.room-guanli{width: 670px !important;border-right:1px solid #c6c6c6;overflow: hidden;float: left;padding: 9px 0;}
+.room-unit{color: #000;font-size:14px;font-family: Microsoft YaHei;font-weight: bold;}
+.park-blue{background: #69a7eb;}
+.park-black{background: #585a66;}
+.room-money{width: 375px;overflow: hidden;float: left;}
+.margin-110{margin: 90px 0 20px;}
+.room-kind{width: 100px !important;margin-left:10px;}
+.room-explaination{line-height:30px;width: 255px;height: 178px;border-radius: 5px;background: #fff;border:1px solid #cfcfcf;position: absolute;top: 22px;left: 50px;z-index: 1000;padding-top: 10px;}
+.room-explaination1{color: #313239;font-size:14px;font-family: Microsoft YaHei;overflow: hidden;}
+.room-explain-txt2{width:85px;text-align: right;display: inline-block;float:left;}
+.room-explain-txt{font-weight: bold;float: left;}
+/*box*/
+.room-box-btn{margin: 3px 0 0 5px !important;height: 27px !important;width: 76px !important;}
+.room-box-row{padding-left: 20px;}
+.room-sex{margin-left: 17px;width: 194px;padding: 0;}
+.checkout-table{height: 165px;overflow: hidden;}
+.waste{overflow-y:scroll;}
+.waste .table > tbody > tr > td, .table > tfoot > tr > td{padding: 8px 13px;}
+.waste-num{width: 40px;text-align: center;border-radius: 3px;border: 1px solid #69a7eb;}
+/*operat*/
+.operat{color: #333333;font-size:16px;font-family: Microsoft YaHei;font-weight: bold;text-align: center;}
+.operat-num{color: #f46618;}
+.operat-height{min-height: 90px;margin-top: 37px;}

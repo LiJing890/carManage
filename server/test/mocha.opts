@@ -1,0 +1,4 @@
+--compilers es6:babel-core/register
+--reporter spec
+--colors
+--timeout 18000

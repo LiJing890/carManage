@@ -1,0 +1,252 @@
+<div class="room-box" ng-controller="roomcheckout as vm">
+  <div class="light-box-title"><span class="text-white">退房</span></div>
+  <form class="form-horizontal text-normal" name="myForm" autocomplete="off" ng-submit="vm.checkOut()" novalidate>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cusname" class="col-sm-5 control-label">姓名</label>
+      <div class="col-sm-7">
+        <input type="text" name="cusname" class="form-control width-154" ng-model="vm.jsondata.cusname" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label class="col-sm-5 control-label">性别</label>
+      <div class="col-sm-7">
+        <select class="form-control width-154" name="cussex" ng-model="vm.jsondata.cussex" disabled="true">
+            <option value="1">男</option>
+            <option value="2">女</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cuscard" class="col-sm-5 control-label">身份证</label>
+      <div class="col-sm-7">
+        <input type="text" name="cuscard" class="form-control width-154" ng-model="vm.jsondata.cuscard" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="tel" class="col-sm-5 control-label">电话号码</label>
+      <div class="col-sm-7">
+        <input type="text" name="tel" class="form-control width-154" ng-model="vm.jsondata.tel" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="birthplace" class="col-sm-5 control-label">户籍地址</label>
+      <div class="col-sm-7">
+        <input type="text" name="birthplace" class="form-control width-154" ng-model="vm.jsondata.birthplace" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cardno" class="col-sm-5 control-label">卡号</label>
+      <div class="col-sm-7">
+        <input type="text" name="cardno" class="form-control width-154" ng-model="vm.jsondata.cardno" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <!-- <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cusname1" class="col-sm-5 control-label">同行人1姓名</label>
+      <div class="col-sm-7">
+        <input type="text" name="cusname1" class="form-control width-154" ng-model="vm.jsondata.cusname1" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cuscard1" class="col-sm-5 control-label">同行人1身份证</label>
+      <div class="col-sm-7">
+        <input type="text" name="cuscard1" class="form-control width-154" ng-model="vm.jsondata.cuscard1" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 row room-box-row">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <label for="cussex1" class="col-sm-5 control-label">性别</label>
+        <div class="col-sm-7 row room-sex">
+          <select class="form-control width-154" name="cussex1" ng-model="vm.jsondata.cussex1" disabled="true">
+              <option value="1">男</option>
+              <option value="2">女</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cusname2" class="col-sm-5 control-label">同行人2姓名</label>
+      <div class="col-sm-7">
+        <input type="text" name="cusname2" class="form-control width-154" ng-model="vm.jsondata.cusname2" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cuscard2" class="col-sm-5 control-label">同行人2身份证</label>
+      <div class="col-sm-7">
+        <input type="text" name="cuscard2" class="form-control width-154" ng-model="vm.jsondata.cuscard2" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 row room-box-row">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <label for="cussex2" class="col-sm-5 control-label">性别</label>
+        <div class="col-sm-7 row room-sex">
+          <select class="form-control width-154" name="cussex2" ng-model="vm.jsondata.cussex2" disabled="true">
+              <option value="1">男</option>
+              <option value="2">女</option>
+          </select>
+        </div>
+      </div>
+    </div> -->
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="intime" class="col-sm-5 control-label">入住时间</label>
+      <div class="col-sm-7">
+        <input type="text" name="intime" class="form-control width-154" ng-model="vm.jsondata.intime" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="outime" class="col-sm-5 control-label">预计退房时间</label>
+      <div class="col-sm-7">
+        <input type="text" name="outime" class="form-control width-154" ng-model="vm.jsondata.outime" readonly="readonly" placeholder="">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="costtype" class="col-sm-5 control-label">消费方式</label>
+      <div class="col-sm-7">
+        <select class="form-control width-154" name="costtype" ng-model="vm.jsondata.costtype" disabled="true">
+            <option value="1">天</option>
+            <option value="2">小时</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="price" class="col-sm-5 control-label">价格</label>
+      <div class="col-sm-7">
+        <input type="text" name="price" class="form-control width-154" ng-model="vm.jsondata.priceday" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="roomno" class="col-sm-5 control-label">房间号</label>
+      <div class="col-sm-7">
+        <input type="text" name="roomno" class="form-control width-154" ng-model="vm.jsondata.roomno" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="rtname" class="col-sm-5 control-label">房型</label>
+      <div class="col-sm-7">
+        <input type="text" name="rtname" class="form-control width-154" ng-model="vm.jsondata.rtname" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="roomConfigNum" class="col-sm-5 control-label">房间耗损</label>
+      <div class="col-sm-7">
+        <div class="checkout-table waste">
+          <table class="table table-striped table-hover table-bordered table01" >
+              <thead>
+                  <tr>
+                      <td>选择</td>
+                      <td>名称</td>
+                      <td>价格</td>
+                      <td>数量</td>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="jj in vm.roomJJList">
+                      <td><input type="checkbox" ng-model="jj.isCheck" ng-checked="vm.lossJJChange()"></td>
+                      <td>{{jj.rcname}}</td>
+                      <td>{{jj.rcprice}}</td>
+                      <td><input type="number" class="waste-num" ng-model="jj.num" ng-change="vm.lossJJChange()" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled"></td>
+                  </tr>
+              </tbody>
+          </table> 
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="roomConfigNum" class="col-sm-5 control-label">消费品</label>
+      <div class="col-sm-7">
+           <div class="checkout-table waste">
+              <table class="table table-striped table-hover table-bordered table01" >
+                  <thead>
+                      <tr>
+                          <td>选择</td>
+                          <td>名称</td>
+                          <td>价格</td>
+                          <td>数量</td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat="ls in vm.roomLSList">
+                          <td><input type="checkbox" ng-model="ls.isCheck" ng-checked="vm.lossLSChange()"></td>
+                          <td>{{ls.rcname}}</td>
+                          <td>{{ls.rcprice}}</td>
+                          <td><input type="number" class="waste-num" ng-model="ls.num" ng-change="vm.lossLSChange()" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled"></td>
+                      </tr>
+                  </tbody>
+              </table> 
+            </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="loss" class="col-sm-5 control-label">赔偿金额</label>
+      <div class="col-sm-7">
+        <input type="number" name="loss" class="form-control width-154" ng-model="vm.lossjj" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cost" class="col-sm-5 control-label">消费品消费</label>
+      <div class="col-sm-7">
+        <input type="number" name="loss" class="form-control width-154" ng-model="vm.lossls" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cost" class="col-sm-5 control-label">房间消费</label>
+      <div class="col-sm-7">
+        <input type="number" name="cost" class="form-control width-154" ng-model="vm.jsondata.cost" placeholder="" ng-change="vm.totalpriceChange()" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="discount" class="col-sm-5 control-label">优惠金额</label>
+      <div class="col-sm-7">
+        <input type="number" name="discount" class="form-control width-154" ng-model="vm.jsondata.discount" placeholder="" ng-change="vm.totalpriceChange()" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="ktamt" class="col-sm-5 control-label">空调费</label>
+      <div class="col-sm-7">          
+       <select class="form-control width-154" name="ktamt" ng-model="vm.jsondata.ktamt" ng-change="vm.ktChange()">
+            <option value="20">20</option>
+            <option value="40">40</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="ktnum" class="col-sm-5 control-label">空调使用天数</label>
+      <div class="col-sm-7">
+        <input type="number" name="ktnum" class="form-control width-154" ng-model="vm.jsondata.ktnum" placeholder="" ng-change="vm.ktChange()" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled">
+        <span class="help-block" ng-show="myForm.submitted && myForm.ktnum.$error.required">请输入空调使用天数！</span>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="vehiclenumber" class="col-sm-5 control-label">车牌号</label>
+      <div class="col-sm-7">
+        <input type="text" name="vehiclenumber" class="form-control width-154" ng-model="vm.jsondata.vehiclenumber" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="deposit" class="col-sm-5 control-label">押金</label>
+      <div class="col-sm-7">
+        <input type="number" name="deposit" class="form-control width-154" ng-model="vm.jsondata.deposit" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="totalmoney" class="col-sm-5 control-label">总消费金额</label>
+      <div class="col-sm-7">
+        <input type="number" name="totalmoney" class="form-control width-154" ng-model="vm.jsondata.totalmoney" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="changed" class="col-sm-5 control-label">找零</label>
+      <div class="col-sm-7">
+        <input type="number" name="changed" class="form-control width-154" ng-model="changed" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-center">
+        <button type="button" class="btn navbar-btn btn-sky width-94" ng-click="vm.pinCard()"><span class="glyphicon glyphicon-credit-card margin-4"></span>销卡</button>
+        <button type="submit" class="btn navbar-btn btn-sky width-94"><span class="glyphicon glyphicon-ok margin-4"></span>结算</button>
+        <button type="button" class="btn navbar-btn btn-default width-94" ng-click="vm.cancel()"><span class="glyphicon glyphicon-remove margin-4"></span>取消</button>
+      </div>
+    </div>
+  </form>
+</div>
+<audio id="audioZK" controls="controls" ng-src="sound/zhikaok.wav" ng-show="false"></audio>
+<audio id="audioOut" controls="controls" ng-src="sound/jiesuanok.wav" ng-show="false"></audio>

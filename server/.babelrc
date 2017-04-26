@@ -1,0 +1,15 @@
+{
+  "presets": [
+    "es2015",
+    "stage-1"
+  ],
+  "plugins": [
+    "syntax-async-functions",
+    "transform-async-to-generator",
+    "transform-regenerator",
+    "transform-runtime",
+    "syntax-export-extensions",
+    "transform-export-extensions",
+    "add-module-exports"
+  ]
+}

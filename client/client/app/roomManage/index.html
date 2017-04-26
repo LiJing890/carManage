@@ -1,0 +1,20 @@
+<!--<div ng-include="'components/header/header.html'"></div>-->
+<div class="left-nav">
+  <ul class="left-nav-box" ng-controller="roomManageIndexCtrl">
+   <li class="left-nav-menu-title"><i class="fa fa-list"></i> 菜单列表</li>
+   <li  ng-class="{'left-nav-active': isActive('/roomManage/settledout')}"><a href="/roomManage/settledout" ui-sref=".settledout"><i class="icon-chevron-right"></i>入住退房</a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/roomManage/customerCheck')}"><a href="/roomManage/customerCheck" ui-sref=".customerCheck"><i class="icon-chevron-right"></i>人员查询</a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/roomManage/setting')}"><a href="/roomManage/setting" ui-sref=".setting"><i class="icon-chevron-right"></i>房型设置</a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/roomManage/roomFloor')}"><a href="/roomManage/roomFloor" ui-sref=".roomFloor"><i class="icon-chevron-right"></i>客房设置</a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/roomManage/setUp')}"><a href="/roomManage/setUp" ui-sref=".setUp"><i class="icon-chevron-right"></i></a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/roomManage/commute')}"><a href="/roomManage/commute" ui-sref=".commute"><i class="icon-chevron-right"></i></a></li>
+
+  </ul>
+</div>
+<div  id="right-content" class="right-content" ui-view></div>
+<!--<div ng-include="'components/navbar/navbar.html'"></div>-->

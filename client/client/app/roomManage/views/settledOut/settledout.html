@@ -1,0 +1,87 @@
+<div class="room-check" ng-controller="settledoutmain as vm">
+	<div class="search-box">
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <label for="status" class="sr-only">房型</label>
+                <select class="form-control width-154" placehodler="状态"
+                        ng-model="vm.queryHotelRoom.rid" 
+                        ng-options="it.id as it.rtname for it in vm.hotelRoomtypeList" 
+                        ng-change="vm.queryRoomClick()">
+                    <option value="">房型</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status" class="sr-only">房间状态</label>
+                <select class="form-control width-154" placehodler="状态"
+                        ng-model="vm.queryHotelRoom.rstatus" ng-change="vm.queryRoomClick()">
+                    <option value="">房间状态</option>
+					<option value="1">可用</option>
+					<option value="2">已入住</option>
+					<!-- <option value="3">已预订</option> -->
+					<option value="4">空脏房</option>
+					<option value="5">不可用</option>
+                </select>
+            </div>
+        </form>
+    </div>
+	<div class="nav_car">
+        <ul class="nav nav-tabs nav-lpt car_nav_ul"  ng-repeat="hb in vm.hotelBuildList">
+            <li ng-class="{active: vm.hotelBuild.id == hb.id}"><a href="javascript:;" ng-click="vm.activeHotelBuild(hb)">{{hb.bname}}</a></li>
+        </ul>
+        <button type="button" ng-click="vm.readCard()" class="btn navbar-btn btn-sky width-94"><span class="glyphicon glyphicon-credit-card margin-4"></span>读卡</button>
+        <div class="car_nav_kind"><span class="car-nav-kind1 no-use" ></span><span class="car_nav_txt">不可用</span></div>
+        <div class="car_nav_kind"><span class="car-nav-kind1 empty-dirty" ></span><span class="car_nav_txt">空脏房</span></div>
+        <div class="car_nav_kind"><span class="car-nav-kind1 parked" ></span><span class="car_nav_txt">入住</span></div>
+        <div class="car_nav_kind"><span class="car-nav-kind1 empty" ></span><span class="car_nav_txt">空闲</span></div>
+    </div>
+    <div class="clearfix margin-20 floor_room_box">
+    	<ul class="room-floor">
+    		<li class="room-floor-li" ng-repeat="hf in vm.hotelFloorList">
+    			<a href="#" class="room-floor-a" ng-class="{'room-floor-active': vm.hotelFloor.id == hf.id}" ng-click="vm.activeHotelFloor(hf)">{{hf.floor}}</a>
+    		</li>
+    	</ul>
+    	<div class="room-all pull-left">
+		    <div class="clearfix">
+		        <!-- <div class="car-room-all2" ng-repeat="hr in vm.hotelRoomList">
+		            <div class="clearfix">
+		                <div class="room-num2 lot-num text-center pull-left" 
+		                	ng-class="{'empty': hr.rstatus == '1' || hr.rstatus == '3','parked': hr.rstatus == '2','empty-dirty': hr.rstatus == '4','no-use': hr.rstatus == '5'}"  
+		                	ng-click="vm.clickToSelect(hr)">
+		                    <div>
+		                    	{{hr.roomno}}
+		                    </div>
+                            <div>{{hr.rtname}}</div>
+		                </div>
+		            </div>
+		        </div>  -->
+                <div ng-repeat="hr in vm.hotelRoomList" class="room-num2 lot-num text-center pull-left"
+                    ng-class="{'empty': hr.rstatus == '1' || hr.rstatus == '3','parked': hr.rstatus == '2','empty-dirty': hr.rstatus == '4','no-use': hr.rstatus == '5'}"
+                    ng-click="vm.clickToSelect(hr)"  ng-mousedown="vm.clickToSelect(hr)" oncontextmenu="false">
+                        <div ng-show="p.parkingstatus != 2">{{hr.roomno}}
+                            <button class="set-close" ng-show="vm.hotelRoom.id == hr.id" ng-click="vm.clickToDeleteRoom(hr)"></button>
+                        </div>
+                        <div>{{hr.rtname}}</div>
+                </div>                
+		    </div>
+		</div>
+	</div>
+    <div class="room-bottom">
+        <!-- <div class="col-sm-3 col-md-3 col-lg-3 room-bottom1" ng-repeat="rs in vm.roomStatic">
+            <span class="room-type">{{rs.rtname}}</span>
+            <span class="room-type-txt">入住</span><span class="room-type-num">{{rs.innum}}</span>
+            <span class="room-type-txt">剩余</span><span class="room-type-num">{{rs.freenum}}</span>
+        </div> -->
+        <div class="col-sm-3 col-md-3 col-lg-3 room-bottom1">
+            <span class="room-type">押金总额</span><span class="room-type-num">{{vm.customerInOutNum.deposit}}</span><span class="room-type-txt">元</span>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 room-bottom1">
+            <span class="room-type">结算金额</span><span class="room-type-num">{{vm.customerInOutNum.totalmoney}}</span><span class="room-type-txt">元</span>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 room-bottom1">
+            <span class="room-type">开房数量</span><span class="room-type-num">{{vm.customerInOutNum.innum}}</span><span class="room-type-txt">间</span>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 room-bottom1">
+            <span class="room-type">退房数量</span><span class="room-type-num">{{vm.customerInOutNum.outnum}}</span><span class="room-type-txt">间</span>
+        </div>
+    </div>
+</div>

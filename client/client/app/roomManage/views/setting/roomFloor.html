@@ -1,0 +1,104 @@
+<div class="room-check" ng-controller="roomfloorlist as vm"  onselectstart="return false">
+	<!-- <div class="search-box">
+	    <form class="form-inline" role="form">
+	        <div class="form-group">
+	            <label for="status" class="sr-only">房间类型</label>
+	            <select class="form-control width-154 w-200" id="status" placehodler="状态"
+	                    ng-model='vm.roleList.query.status' ng-change="queryClick()">
+	                <option value="">--房间类型--</option>
+	                <option value="1">启用</option>
+	                <option value="0">禁用</option>
+	            </select>
+	        </div>
+	        <div class="form-group">
+	            <label for="status" class="sr-only">选择楼栋</label>
+	            <select class="form-control width-154 w-200" id="status" placehodler="状态"
+	                    ng-model='vm.roleList.query.status' ng-change="queryClick()">
+	                <option value="">--选择楼栋--</option>
+	                <option value="1">启用</option>
+	                <option value="0">禁用</option>
+	            </select>
+	        </div>
+	        <div class="form-group">
+	            <label for="status" class="sr-only">选择楼层</label>
+	            <select class="form-control width-154 w-200" id="status" placehodler="状态"
+	                    ng-model='vm.roleList.query.status' ng-change="queryClick()">
+	                <option value="">--选择楼层--</option>
+	                <option value="1">启用</option>
+	                <option value="0">禁用</option>
+	            </select>
+	        </div>
+	        <button type="button" class="btn btn-sky width-94" ng-click="queryClick()"><span
+	                class="glyphicon glyphicon-search margin-4"></span>搜索
+	        </button>
+	    </form>
+    </div> -->
+	<div class="nav_car">
+        <ul class="nav nav-tabs nav-lpt car_nav_ul"  ng-repeat="hb in vm.hotelBuildList">
+            <li ng-class="{active: vm.hotelBuild.id == hb.id}"><a href="javascript:;" ng-click="vm.activeHotelBuild(hb)">{{hb.bname}}</a><button class="room-a-close" ng-click="vm.clickToDeleteBuilding(hb)"></button></li>
+        </ul>
+        <button class="car_add" ng-click="vm.clickToAddBuilding()">+</button>
+        <div class="car_nav_kind"><span class="car-nav-kind1 no-use" ></span><span class="car_nav_txt">不可用</span></div>
+        <div class="car_nav_kind"><span class="car-nav-kind1 empty-dirty" ></span><span class="car_nav_txt">空脏房</span></div>
+        <div class="car_nav_kind"><span class="car-nav-kind1 parked" ></span><span class="car_nav_txt">入住</span></div>
+        <div class="car_nav_kind"><span class="car-nav-kind1 empty" ></span><span class="car_nav_txt">空闲</span></div>
+    </div>
+    <div class="clearfix margin-20 floor_room_box_setup">
+    	<ul class="room-floor">
+    		<li class="room-floor-li" ng-repeat="hf in vm.hotelFloorList">
+    			<a href="#" class="room-floor-a" ng-class="{'room-floor-active': vm.hotelFloor.id == hf.id}" ng-click="vm.activeHotelFloor(hf)">{{hf.floor}}</a>
+    			<button class="room-floor-close" ng-click="vm.Delfloor(hf)"></button>
+    		</li>
+			<!-- <li class="room-floor-li"><a href="#" class="room-floor-a">6楼</a><button class="room-floor-close"></button></li>
+    		<li class="room-floor-li"><a href="#" class="room-floor-a room-floor-active">6楼</a><button class="room-floor-close"></button></li>
+    		<li class="room-floor-li"><a href="#" class="room-floor-a">6楼</a><button class="room-floor-close"></button></li>
+    		<li class="room-floor-li"><a href="#" class="room-floor-a">6楼</a><button class="room-floor-close"></button></li> -->
+    		<li class="room-floor-li"><button class="car_add add_floor_btn" ng-click="vm.clickToAddFloor(vm.hotelBuild.id)">+</button></button></li>
+    	</ul>
+    	<div class="room-all pull-left">
+		    <div class="clearfix">
+					<!--5个为一组-->
+		      <!-- <div class="car-room-all2" ng-repeat="item in vm.hotelRoomList">
+		            <div class="clearfix">
+		                <div class="room-num2 lot-num text-center pull-left"
+		                	ng-class="{'empty': hr.rstatus == '1' || hr.rstatus == '3','parked': hr.rstatus == '2','empty-dirty': hr.rstatus == '4','no-use': hr.rstatus == '5'}"
+		                	ng-repeat="hr in item.data" ng-Dblclick="vm.clickToEditRoom(hr)" ng-mouseenter="vm.Isactive(true,hr)"
+		                	ng-mouseleave="vm.Isactive(false,hr)" ng-mousedown="vm.ClickSelect(hr)">
+		                    <div ng-show="p.parkingstatus != 2">{{hr.roomno}}
+		                        <button class="set-close" ng-show="vm.hotelRoom.id == hr.id" ng-click="vm.clickToDeleteRoom(hr)"></button>
+		                    </div>
+		                    <div>{{hr.rtname}}</div>
+		                    <div class="gou" ng-if="hr.issel"><img src="/assets/images/gou.png"></div>
+		                </div>
+		            </div>
+		        </div> -->
+						<div class="clearfix">
+								<div ng-repeat="hr in vm.hotelRoomList" class="room-num2 lot-num text-center pull-left"
+									ng-class="{'empty': hr.rstatus == '1' || hr.rstatus == '3','parked': hr.rstatus == '2','empty-dirty': hr.rstatus == '4','no-use': hr.rstatus == '5'}"
+								  ng-Dblclick="vm.clickToEditRoom(hr)" ng-mouseenter="vm.Isactive(true,hr)"
+									ng-mouseleave="vm.Isactive(false,hr)" ng-mousedown="vm.ClickSelect(hr,this)">
+										<div ng-show="p.parkingstatus != 2">{{hr.roomno}}
+												<button class="set-close" ng-show="vm.hotelRoom.id == hr.id" ng-click="vm.clickToDeleteRoom(hr)"></button>
+										</div>
+										<div>{{hr.rtname}}</div>
+										<div class="gou" ng-if="hr.issel"><img src="/assets/images/gou.png"></div>
+								</div>
+								 <button class="car-main-add pull-left" ng-click="vm.clickToAddRoom(vm.hotelFloor.id)">+</button>
+								 <div class="clearall"><button type="button" class="order-yun btn-sky width-94 width-98 margin-20" ng-click="vm.BatchDel()"><span class="glyphicon glyphicon-remove margin-4"></span>批量删除</button></div>
+						</div>		       
+		        
+		    </div>
+		</div>
+	</div>
+	<!--<div class="room-bottom">
+		<div class="col-sm-4 col-md-4 col-lg-4 room-bottom1" ng-repeat="rs in vm.roomStatic">
+			<span class="room-type">{{rs.rtname}}</span><span class="room-type-txt">入住</span><span class="room-type-num">{{rs.innum}}</span><span class="room-type-txt">剩余</span><span class="room-type-num">{{rs.freenum}}</span>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-4 room-bottom1">
+			<span class="room-type">押金总额</span><span class="room-type-num">{{vm.customerInOutNum.totalmoney}}</span><span class="room-type-txt">元</span>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-4 room-bottom1">
+			<span class="room-type">开房数</span><span class="room-type-num">{{vm.customerInOutNum.innum}}</span><span class="room-type-txt">间</span>
+		</div>
+	</div>-->
+</div>

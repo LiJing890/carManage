@@ -1,0 +1,24 @@
+<div ng-controller="addRoom as vm">
+  <div class="light-box-title"><span class="text-white">新增房间</span></div>
+  <form class="form-horizontal text-normal" name="myForm" autocomplete="off" ng-submit="vm.addRoom()" novalidate>
+    <div class="form-group">
+      <label for="roomno" class="col-sm-3 control-label"><code>*</code>房号</label>
+      <div class="col-sm-9" ng-class="{'has-error':myForm.submitted && myForm.roomno.$invalid}">
+        <input type="text" name="roomno" class="form-control width-154" ng-model="vm.jsondata.roomno" placeholder="房号" ng-minlength="1" ng-maxlength="10" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.roomno.$error.required">请输入1-10个字符的房间编号！</span>
+      </div>
+    </div>
+       <div class="form-group">
+      <label for="roomno" class="col-sm-3 control-label">房型</label>
+      <div class="col-sm-9">
+        <select class="form-control width-154" placehodler="房间类型" ng-model="vm.queryHotelRoom.rid" ng-options="it.id as it.rtname for it in vm.hotelRoomtypeList"></select>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-center">
+        <button type="submit" class="btn navbar-btn btn-sky width-94"><span class="glyphicon glyphicon-ok margin-4"></span>确定</button>
+        <button type="button" class="btn navbar-btn btn-default width-94" ng-click="vm.cancel()"><span class="glyphicon glyphicon-remove margin-4"></span>取消</button>
+      </div>
+    </div>
+  </form>
+</div>

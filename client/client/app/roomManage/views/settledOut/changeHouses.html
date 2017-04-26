@@ -1,0 +1,164 @@
+<div class="room-box" ng-controller="changeHousesCtrl as vm">
+  <div class="light-box-title"><span class="text-white">换房</span></div>
+  <form class="form-horizontal text-normal" name="myForm" autocomplete="off" ng-submit="vm.save()" novalidate>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cusname" class="col-sm-4 control-label">姓名</label>
+      <div class="col-sm-8">
+        <input type="text" name="cusname" class="form-control width-154" ng-model="vm.jsondata.cusname" placeholder="姓名" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cussex" class="col-sm-4 control-label">性别</label>
+      <div class="col-sm-8">
+        <select class="form-control width-154" name="cussex" ng-model="vm.jsondata.cussex" disabled="true">
+            <option value="1">男</option>
+            <option value="2">女</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cuscard" class="col-sm-4 control-label">身份证</label>
+      <div class="col-sm-8">
+        <input type="text" name="cuscard" class="form-control width-154" ng-model="vm.jsondata.cuscard" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="tel" class="col-sm-4 control-label">电话号码</label>
+      <div class="col-sm-8">
+        <input type="text" name="tel" class="form-control width-154" ng-model="vm.jsondata.tel" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="birthplace" class="col-sm-4 control-label">户籍地址</label>
+      <div class="col-sm-8">
+        <input type="text" name="birthplace" class="form-control width-154" ng-model="vm.jsondata.birthplace" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cardno" class="col-sm-4 control-label">卡号</label>
+      <div class="col-sm-8">
+        <input type="text" name="cardno" class="form-control width-154" ng-model="vm.jsondata.cardno" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cname1" class="col-sm-4 control-label">同行人1姓名</label>
+      <div class="col-sm-8">
+        <input type="text" name="cname1" class="form-control width-154" ng-model="vm.jsondata.cname1" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="ccard1" class="col-sm-4 control-label">同行人1身份证</label>
+      <div class="col-sm-8">
+        <input type="text" name="ccard1" class="form-control width-154" ng-model="vm.jsondata.ccard1" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 row room-box-row">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <label for="csex1" class="col-sm-4 control-label">性别</label>
+        <div class="col-sm-8 row room-sex">
+          <select class="form-control width-154" name="csex1" ng-model="vm.jsondata.csex1" disabled="true">
+              <option value="1">男</option>
+              <option value="2">女</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="cname2" class="col-sm-4 control-label">同行人2姓名</label>
+      <div class="col-sm-8">
+        <input type="text" name="cname2" class="form-control width-154" ng-model="vm.jsondata.cname2" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="ccard2" class="col-sm-4 control-label">同行人2身份证</label>
+      <div class="col-sm-8">
+        <input type="text" name="ccard2" class="form-control width-154" ng-model="vm.jsondata.ccard2" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 row room-box-row">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <label for="csex2" class="col-sm-4 control-label">性别</label>
+        <div class="col-sm-8 row room-sex">
+          <select class="form-control width-154" name="csex2" ng-model="vm.jsondata.csex2" disabled="true">
+              <option value="1">男</option>
+              <option value="2">女</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="intime" class="col-sm-4 control-label">入住时间</label>
+      <div class="col-sm-8">
+        <input type="text" name="intime" class="form-control width-154" ng-model="vm.jsondata.intime" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="outime" class="col-sm-4 control-label">预计退房时间</label>
+      <div class="col-sm-8">
+        <!-- <quick-datepicker name="outime" ng-model='vm.jsondata.outime' on-change="vm.dateToString()" date-format='yyyy-MM-dd' time-format='HH:mm:ss' default-time="12:00:00" disable-clear-button="true" placeholder='选择时间' /> -->
+        <div class="dropdown">
+            <a class="dropdown-toggle" id="outime_dl" role="button" data-toggle="dropdown" data-target="#">
+                <div class="input-group no-margin">
+                    <input type="text" class="form-control width-154 w-200" data-ng-model="vm.outime | date:'yyyy-MM-dd HH:mm:ss'" ng-disabled="viewState == 0">
+                    <span class="sr-only" ng-if="viewState != 0"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+            </a>
+            <ul ng-if="viewState != 0"  class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <datetimepicker data-ng-model="vm.outime"
+                                data-datetimepicker-config="{ dropdownSelector: '#outime_dl',startView:'minute', minView:'minute' }"></datetimepicker>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="costtype" class="col-sm-4 control-label">消费方式</label>
+      <div class="col-sm-8">
+        <select class="form-control width-154" name="costtype" ng-model="vm.jsondata.costtype" ng-change="vm.costtypeChange()" disabled="true">
+            <option value="1">天</option>
+            <option value="2">小时</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="price" class="col-sm-4 control-label">价格</label>
+      <div class="col-sm-8">
+        <input type="text" name="price" class="form-control width-154" ng-model="price" placeholder="" readonly="readonly">
+
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="roomno" class="col-sm-4 control-label"><code>*</code>房间号</label>
+      <div class="col-sm-8" ng-class="{'has-error':myForm.submitted && myForm.roomno.$invalid}">
+        <input type="text" name="roomno" class="form-control width-154" ng-model="vm.jsondata.roomno" placeholder="" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.roomno.$error.required">押金不能为空！</span>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="rtname" class="col-sm-4 control-label">房型</label>
+      <div class="col-sm-8">
+        <input type="text" name="rtname" class="form-control width-154" ng-model="vm.jsondata.rtname" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="vehiclenumber" class="col-sm-4 control-label">车牌号</label>
+      <div class="col-sm-8">
+        <input type="text" name="vehiclenumber" class="form-control width-154" ng-model="vm.jsondata.vehiclenumber" placeholder="" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="deposit" class="col-sm-4 control-label"><code>*</code>押金</label>
+      <div class="col-sm-8" ng-class="{'has-error':myForm.submitted && myForm.deposit.$invalid}">
+        <input type="text" name="deposit" class="form-control width-154" ng-model="vm.jsondata.deposit" placeholder="" ng-change="vm.depositChange()" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.deposit.$error.required">押金不能为空！</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-center clear">
+        <!-- <button type="button" class="btn navbar-btn btn-sky width-94" ng-click="vm.makeCard()"><span class="glyphicon glyphicon-credit-card margin-4"></span>制卡</button> -->
+        <button type="submit" class="btn navbar-btn btn-sky width-94"><span class="glyphicon glyphicon-ok margin-4"></span>保存</button>
+        <button type="button" class="btn navbar-btn btn-default width-94" ng-click="vm.cancel()"><span class="glyphicon glyphicon-remove margin-4"></span>取消</button>
+      </div>
+    </div>
+  </form>
+</div>
+<audio id="audioZK" controls="controls" ng-src="sound/zhikaok.wav" ng-show="false"></audio>

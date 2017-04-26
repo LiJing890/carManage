@@ -1,0 +1,12 @@
+<div class="room-box" ng-controller="checkInOut as vm">
+  	<div class="light-box-title"><span class="text-white">操作</span></div>
+  	<div class="operat">当前房间<span class="operat-num">{{roominfo.roomno}}</span>，请选择操作</div>
+  	<div class="text-center operat-height">
+        <!-- <button type="button" class="btn navbar-btn btn-sky width-94 margin-21"><span class="glyphicon glyphicon-credit-card"></span>补卡</button> -->
+        <button type="button" class="btn navbar-btn btn-sky width-94 margin-21" ng-click="vm.cheangeView('3')"><span class="glyphicon glyphicon-minus-sign margin-4"></span>补卡</button>
+        <button type="button" class="btn navbar-btn btn-sky width-94 margin-21" ng-click="vm.cheangeView('1')"><span class="glyphicon glyphicon-plus-sign margin-4"></span>续房</button>
+        <button type="button" class="btn navbar-btn btn-sky width-94 margin-21" ng-click="vm.cheangeView('2')"><span class="glyphicon glyphicon-minus-sign margin-4"></span>退房</button>
+        <button type="button" class="btn navbar-btn btn-sky width-94 margin-21" ng-click="vm.cheangeView('4')"><span class="glyphicon glyphicon-minus-sign margin-4"></span>换房</button>
+        <!-- <button type="button" class="btn navbar-btn btn-sky width-94 margin-21"><span class="glyphicon glyphicon-refresh"></span>换房</button> -->
+    </div>
+</div>

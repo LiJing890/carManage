@@ -1,0 +1,30 @@
+<div class="content-box" ng-controller="settingctrl">
+    <div class="control-box">
+       <button type="button" class="btn btn-sky width-94"  ng-click="clickToOpenmodel()"><span class="glyphicon glyphicon-plus margin-4"></span> 新增房型</button>
+       <button type="button" class="btn btn-sky width-154" ng-click="clickToOpen()"><span class="glyphicon glyphicon-cutlery margin-4"></span> 房内物品设置</button>
+    </div>
+    <div class="table-responsive-1-1">
+      <table class="table table-striped table-hover table-bordered table01">
+      <thead>
+        <tr>
+          <td>操作</td>
+          <td>房型名称</td>
+          <td>房间配置</td>
+          <td>每日单价(￥)</td>
+          <td>小时单价(￥)</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="roomModel in roomModellist">
+          <td><a href="" class="glyphicon glyphicon glyphicon-edit margin-h10" title="编辑" ng-click="clickToUpdatemodel(roomModel.id)"></a> <a href="" class="glyphicon glyphicon-trash margin-h10" title="删除" ng-click="clickToDeletemodel(roomModel)"></a></td>
+          <td>{{roomModel.rtname}}</td>
+          <td>{{roomModel.rtconfig}}</td>
+          <td>{{roomModel.priceday}}</td>
+          <td>{{roomModel.pricehour}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="margin-12">注：如房间内需要添加设备或零食，请选添加“房内物品设置”，如果不需要管理，可不添加 </div>
+  </div>
+  <tm-pagination conf="paginationConf" class="page-fix"></tm-pagination>
+</div>

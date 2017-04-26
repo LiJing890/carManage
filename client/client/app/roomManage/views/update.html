@@ -1,0 +1,48 @@
+<div ng-controller="rcgoods as vm">
+  <div class="light-box-title"><span class="text-white">新建/修改房内物品</span></div>
+  <form class="form-horizontal text-normal" name="myForm" autocomplete="off" ng-submit="vm.update()" novalidate>
+    <div class="form-group">
+      <label for="rcname" class="col-sm-3 control-label"><code>*</code>设备名称</label>
+      <div class="col-sm-9" ng-class="{'has-error':myForm.submitted}">
+        <input type="text" name="rcname" class="form-control width-154" ng-model="vm.jsondata.rcname" placeholder="设备名称"  required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.rcname.$error.required">请输入设备名称！</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label"><code>*</code>设备编码</label>
+      <div class="col-sm-9" ng-class="{'has-error':myForm.submitted && myForm.cartype.$invalid}">
+        <input type="text" name="cartype" class="form-control width-154" ng-model="vm.jsondata.rccode" placeholder="设备编码" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.cartype.$error.required">请输入设备编码！</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label"><code>*</code>采购价格</label>
+      <div class="col-sm-9" ng-class="{'has-error':myForm.submitted && myForm.carload.$invalid}">
+        <input type="text" name="carload" class="form-control width-154" ng-model="vm.jsondata.rcprice" placeholder="采购价格"  required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.carload.$invalid">请输入采购价格！</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label"><code>*</code>消费/赔偿价格</label>
+      <div class="col-sm-9" ng-class="{'has-error':myForm.submitted && myForm.carlen.$invalid}">
+        <input name="carlen" type="text" class="form-control width-154" ng-model="vm.jsondata.rcdamageprice" placeholder="消费/赔偿价格" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.carload.$invalid">请输入消费价格！</span>
+      </div>
+    </div>
+    <!-- <div class="form-group">
+      <label class="col-sm-3 control-label">状态</label>
+      <div class="col-sm-9">
+          <select class="form-control width-154" placehodler="" ng-model='vm.jsondata.rcstatus' >
+            <option value="1" >使用中</option>
+            <option value="0">未使用</option>
+          </select>
+      </div>
+    </div> -->
+    <div class="form-group">
+      <div class="text-center">
+        <button type="submit" class="btn navbar-btn btn-sky width-94"><span class="glyphicon glyphicon-ok margin-4"></span>确定</button>
+        <button type="button" class="btn navbar-btn btn-default width-94" ng-click="vm.cancel()"><span class="glyphicon glyphicon-remove margin-4"></span>取消</button>
+      </div>
+    </div>
+  </form>
+</div>

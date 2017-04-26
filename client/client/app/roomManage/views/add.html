@@ -1,0 +1,70 @@
+<div class="room-box" ng-controller="roomModelctrl">
+  <div class="light-box-title"><span class="text-white">房型编辑</span></div>
+  <form class="form-horizontal text-normal" name="myForm" autocomplete="off" ng-submit="update()" novalidate>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="rtname" class="col-sm-5 control-label"><code>*</code>房型名称</label>
+      <div class="col-sm-7">
+        <input type="text" name="rtname" class="form-control width-154" ng-model="jsondata.rtname" placeholder="" ng-minlength="1" ng-maxlength="10" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.rtname.$error.required">请输入房型名称！</span>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="rtcode" class="col-sm-5 control-label"><code>*</code>房型编码</label>
+      <div class="col-sm-7">
+        <input type="text" name="rtcode" class="form-control width-154" ng-model="jsondata.rtcode" placeholder="" ng-minlength="1" ng-maxlength="10" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.rtcode.$error.required">请输入房型编码！</span>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="rtdprice" class="col-sm-5 control-label"><code>*</code>每日单价</label>
+      <div class="col-sm-7">
+        <input type="text" name="rtdprice" class="form-control width-154" ng-model="jsondata.priceday" placeholder="" ng-minlength="1" ng-maxlength="10" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.rtdprice.$error.required">请输入每日单价！</span>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label for="rthprice" class="col-sm-5 control-label"><code>*</code>小时单价</label>
+      <div class="col-sm-7">
+        <input type="text" name="rthprice" class="form-control width-154" ng-model="jsondata.pricehour" placeholder="" ng-minlength="1" ng-maxlength="10" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.rthprice.$error.required">请输入小时单价！</span>
+      </div>
+    </div>
+    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left:12px;">
+      <label class="col-sm-2 control-label">家具</label>
+      <div class="col-sm-10">
+          <div class="col-sm-6 row" ng-repeat="rcj in roomconfigj">
+              <label class="col-sm-4 no-padding margin-5">
+                <input type="checkbox" value="{{rcj.id}}" ng-model="rcj.ischecked">
+                {{rcj.rcname}}
+            </label>
+             <div class="col-sm-8">
+                <label class="col-sm-7 row margin-5"  for="rtconfignum" class="control-label">数量</label>
+                <div class="col-sm-8 row"><input  type="text" name="rtconfignum" class="form-control h-30" ng-model="rcj.rtconfignum" placeholder="" ng-minlength="1" ng-maxlength="10" ng-required="rcj.ischecked"><span class="help-block" ng-show="rcj.ischecked&&myForm.submitted && myForm.rtconfignum.$error.required">数量不正确！</span></div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left:12px;">
+      <label  class="col-sm-2 control-label">消费品</label>
+      <div class="col-sm-10">
+          <div class="col-sm-6 row" ng-repeat="rc in roomconfig">
+              <label class="col-sm-4 no-padding margin-5">
+                <input type="checkbox" value="{{rc.id}}" ng-model="rc.ischecked">
+               {{rc.rcname}}
+              </label>
+              <div class="col-sm-8">
+                <label class="col-sm-7 row margin-5"  for="rtconfignum" class="control-label">数量</label>
+                <div class="col-sm-8 row"><input  type="text" name="rtconfignum" class="form-control h-30" ng-model="rc.rtconfignum" placeholder="" ng-minlength="1" ng-maxlength="10" ng-required="rc.ischecked"><span class="help-block" ng-show="rc.ischecked&&myForm.submitted && myForm.rtconfignum.$error.required">数量不正确！</span></div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="text-center">
+        <button type="submit" class="btn navbar-btn btn-sky width-94" ><span class="glyphicon glyphicon-ok margin-4"></span>保存</button>
+        <button type="button" class="btn navbar-btn btn-default width-94" ng-click="cancel()"><span class="glyphicon glyphicon-remove margin-4"></span>取消</button>
+      </div>
+    </div>
+  </form>
+</div>

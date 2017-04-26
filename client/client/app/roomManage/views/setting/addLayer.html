@@ -1,0 +1,41 @@
+<div ng-controller="addLayer as vm">
+  <div class="light-box-title"><span class="text-white">新建楼层</span></div>
+  <form class="form-horizontal text-normal" name="myForm" autocomplete="off" ng-submit="vm.addLayer()" novalidate>
+    <div class="form-group">
+      <label for="floorcode" class="col-sm-3 control-label"><code>*</code>楼层编号</label>
+      <div class="col-sm-9" ng-class="{'has-error':myForm.submitted && myForm.floorcode.$invalid}">
+        <input type="text" name="floorcode" class="form-control width-154" ng-model="vm.jsondata.floorcode" placeholder="楼层编号" ng-minlength="1" ng-maxlength="10" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.floorcode.$error.required">请输入1-10个字符的楼层编号！</span>
+      </div>
+    </div>
+        <div class="form-group">
+      <label for="floor" class="col-sm-3 control-label"><code>*</code>第几层</label>
+      <div class="col-sm-9" ng-class="{'has-error':myForm.submitted && myForm.floor.$invalid}">
+        <input type="text" name="floor" class="form-control width-154" ng-model="vm.jsondata.floor" placeholder="第几层" required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.floor.$error.required">请输入楼层名称！</span>
+      </div>
+    </div>
+        <div class="form-group">
+      <label for="roomcount" class="col-sm-3 control-label"><code>*</code>房间数</label>
+      <div class="col-sm-9" ng-class="{'has-error':myForm.submitted && myForm.roomcount.$invalid}">
+        <input type="text" name="roomcount" class="form-control width-154" ng-model="vm.jsondata.roomcount" placeholder="房间数"  required>
+        <span class="help-block" ng-show="myForm.submitted && myForm.roomcount.$error.required">请输入房间数！</span>
+      </div>
+    </div>
+      <div class="form-group">
+      <label class="col-sm-3 control-label">房型</label>
+      <div class="col-sm-9">
+         <select class="form-control width-154" placehodler="房间类型" ng-model="vm.jsondata.roomtype" ng-options="it.id as it.rtname for it in vm.hotelRoomtypeList">
+            <!-- <option value="">--全部--</option> -->
+          </select>
+        <!-- <span class="help-block" ng-show="myForm.submitted&& myForm.bname.$error.required">请输入房型！</span> -->
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-center">
+        <button type="submit" class="btn navbar-btn btn-sky width-94"><span class="glyphicon glyphicon-ok margin-4"></span>确定</button>
+        <button type="button" class="btn navbar-btn btn-default width-94" ng-click="vm.cancel()"><span class="glyphicon glyphicon-remove margin-4"></span>取消</button>
+      </div>
+    </div>
+  </form>
+</div>

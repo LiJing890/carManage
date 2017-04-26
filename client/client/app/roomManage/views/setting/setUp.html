@@ -1,0 +1,79 @@
+<div ng-controller="setUpCtrl as vm">
+  <div class="youhui">
+    <form class="form-horizontal text-normal" name="myForm" autocomplete="off" ng-submit="vm.update()" novalidate>
+      <div class="form-group" ng-class="{'has-error':myForm.submitted && myForm.hbegintime.$invalid}">
+        <label for="hbegintime" class="col-sm-2 control-label">住房开始时间</label>
+        <div class="col-sm-10">
+          <div class="row">
+            <input name="hbegintime" type="number" class="youhui-input pull-left form-control width-154 margin-t-3" ng-model="vm.jsondata.hbegintime" placeholder="" min="0" max="24" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled" required><label for="hbegintime" class="control-label">　(时)</label>
+            <span class="help-block" ng-show="myForm.submitted && myForm.hbegintime.$error.required">请输入住房开始时间！</span>
+            <span class="help-block" ng-show="myForm.submitted && (myForm.hbegintime.$error.number || myForm.hbegintime.$error.min || myForm.hbegintime.$error.max)">输入的最大钟点房时间，范围为0-24！</span>
+          </div>
+        </div>
+        <!-- <label for="starttime" class="control-label">(时)</label> -->
+      </div>
+      <div class="form-group" ng-class="{'has-error':myForm.submitted && myForm.hendtime.$invalid}">
+        <label class="col-sm-2 control-label">退房时间</label>
+        <div class="col-sm-10">
+          <div class="row">
+             <input name="hendtime" type="number" class="youhui-input pull-left form-control width-154 margin-t-3" ng-model="vm.jsondata.hendtime" placeholder="" min="0" max="24" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled" required><label for="hendtime" class="control-label">　(时)</label>
+            <span class="help-block" ng-show="myForm.submitted && myForm.hendtime.$error.required">请输入退房时间!</span>
+            <span class="help-block" ng-show="myForm.submitted && (myForm.hendtime.$error.number || myForm.hendtime.$error.min || myForm.hendtime.$error.max)">输入的最大钟点房时间，范围为0-24！</span>
+          </div>
+        </div>
+        <!-- <label for="endtime" class="control-label">(时)</label> -->
+      </div>
+        <div class="form-group" ng-class="{'has-error':myForm.submitted && myForm.hmendtime.$invalid}">
+        <label class="col-sm-2 control-label">最晚退房时间</label>
+        <div class="col-sm-10">
+          <div class="row">
+             <input name="hmendtime" type="number" class="youhui-input pull-left form-control width-154 margin-t-3" ng-model="vm.jsondata.hmendtime" placeholder="" min="0" max="24" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled" required><label for="hmendtime" class="control-label">　(时)</label>
+            <span class="help-block" ng-show="myForm.submitted && myForm.hmendtime.$error.required">请输入最晚退房时间!</span>
+            <span class="help-block" ng-show="myForm.submitted && (myForm.hmendtime.$error.number || myForm.hmendtime.$error.min || myForm.hmendtime.$error.max)">输入的最大钟点房时间，范围为0-24！</span>
+          </div>
+        </div>
+        <!-- <label for="maxtime" class="control-label">(时)</label> -->
+      </div>
+      <div class="form-group" ng-class="{'has-error':myForm.submitted && myForm.hmhour.$invalid}">
+        <label class="col-sm-2 control-label">最大钟点房时间</label>
+        <div class="col-sm-10">
+          <div class="row">
+             <input name="hmhour" type="number" class="youhui-input pull-left form-control width-154 margin-t-3" ng-model="vm.jsondata.hmhour" placeholder="" min="0" max="24" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled" required><label for="hmhour" class="control-label">　(时)</label>
+            <span class="help-block" ng-show="myForm.submitted && myForm.hmhour.$error.required">请输入最大钟点房时间!</span>
+            <span class="help-block" ng-show="myForm.submitted && (myForm.hmhour.$error.number || myForm.hmhour.$error.min || myForm.hmhour.$error.max)">输入的最大钟点房时间，范围为0-24！</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" ng-class="{'has-error':myForm.submitted && myForm.hmhour.$invalid}">
+        <label class="col-sm-2 control-label">客房优惠金额</label>
+        <div class="col-sm-10">
+          <div class="row">
+             <input name="housceamt" type="number" class="youhui-input pull-left form-control width-154 margin-t-3" ng-model="vm.jsondata.housceamt" placeholder="" min="0" max="9999" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled" required><label for="housceamt" class="control-label">　(时)</label>
+            <span class="help-block" ng-show="myForm.submitted && myForm.housceamt.$error.required">请输入客房优惠金额!</span>
+            <span class="help-block" ng-show="myForm.submitted && (myForm.housceamt.$error.number || myForm.housceamt.$error.min || myForm.housceamt.$error.max)">输入的客房优惠金额，范围为0-9999！</span>
+          </div>
+        </div>
+      </div>
+<!-- 
+      <div class="form-group" ng-class="{'has-error':myForm.submitted && myForm.starttime.$invalid && myForm.endtime.$invalid}">
+        <label class="col-sm-3 control-label">过夜时间从</label>
+        <div class="col-sm-5">
+          <input name="starttime" type="number" class="youhui-input pull-left form-control width-154" ng-model="vm.jsondata.starttime" placeholder="" min="0" max="24" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled" required>
+          <label class="control-label pull-left margin-12">时  到</label>
+          <input name="endtime" type="number" class="youhui-input pull-left form-control width-154 margin-12" ng-model="vm.jsondata.endtime" placeholder="" min="0" max="24" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" style="ime-mode:Disabled" required>
+          <label class="control-label pull-left margin-12">时</label>
+          <span class="help-block" ng-show="myForm.submitted && myForm.starttime.$error.required">请输入起始时间!</span>
+          <span class="help-block" ng-show="myForm.submitted && myForm.endtime.$error.required">请输入结束时间!</span>
+          <span class="help-block" ng-show="myForm.submitted && (myForm.starttime.$error.number || myForm.starttime.$error.min || myForm.starttime.$error.max)">输入的开始时间有误，范围为0-24！</span>
+          <span class="help-block" ng-show="myForm.submitted && (myForm.endtime.$error.number || myForm.endtime.$error.min || myForm.endtime.$error.max)">输入的结束时间有误，范围为0-24！</span>
+        </div>
+      </div> -->
+      <div class="form-group margin-36">
+        <div class="col-sm-offset-2">
+          <button type="submit" class="btn navbar-btn btn-sky width-94"><span class="glyphicon glyphicon-ok margin-4"></span>确定</button>
+          <!-- <button type="button" class="btn navbar-btn btn-default width-94" ng-click="vm.cancel()"><span class="glyphicon glyphicon-remove"></span>取消</button> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

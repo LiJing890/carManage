@@ -1,3 +1,3 @@
-# HotelManage
+# carManage
 
-酒店管理系统—后台服务
+汽车美容维护—后台服务

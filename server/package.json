@@ -1,10 +1,9 @@
 {
-  "name": "HotelManage",
+  "name": "carManage",
   "version": "1.0.0",
   "description": "酒店管理系统—后台服务",
   "keywords": [
     "sails",
-    "ES6",
     "Mocha"
   ],
   "dependencies": {
@@ -24,7 +23,7 @@
     "test": "npm run build-prod & node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js --opts test/mocha.opts"
   },
   "main": "/dist/app.js",
-  "author": "libinqi",
+  "author": "lijing",
   "license": "",
   "devDependencies": {
     "babel-cli": "^6.9.0",

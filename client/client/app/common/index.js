@@ -23,6 +23,6 @@ angular.module('commonApp', [
   'ui.router'
 ])
   .run(['$rootScope', '$filter', '$location', '$timeout', function($rootScope, $filter, $location, $timeout) {
-    $location.path('/roomManage');
+    $location.path('/carManage');
 
   }]);

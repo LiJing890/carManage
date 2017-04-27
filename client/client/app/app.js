@@ -9,7 +9,7 @@ angular.module('lptApp', [
   'ui.bootstrap',
   'w5c.validator',
   'ngSails',
-  'roomManageApp',
+  'carManageApp',
   'commonApp',
   'ui.bootstrap.datetimepicker'
 ])

@@ -17,26 +17,26 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <script type="text/javascript">
-    if (process!=undefined && process!=null) {
-      var doc = document;
-      var body = doc.getElementsByTagName("body");
-      var div = doc.createElement("div");
-      div.setAttribute("id", "loading_blank");
-      div.setAttribute("width", 224);
-      div.setAttribute("height", 168);
-      div.setAttribute("z-index", "9999999999");
-      div.setAttribute("style", "position:absolute;top:50%;left:50%;margin:-84px 0 0 -112px");
-      var img = doc.createElement("img");
-      img.setAttribute("src", "file://"+process.cwd() + "/loading.gif");
-      img.setAttribute("width", 224);
-      img.setAttribute("height", 168);
-      div.appendChild(img);
+    // if (process!=undefined && process!=null) {
+    //   var doc = document;
+    //   var body = doc.getElementsByTagName("body");
+    //   var div = doc.createElement("div");
+    //   div.setAttribute("id", "loading_blank");
+    //   div.setAttribute("width", 224);
+    //   div.setAttribute("height", 168);
+    //   div.setAttribute("z-index", "9999999999");
+    //   div.setAttribute("style", "position:absolute;top:50%;left:50%;margin:-84px 0 0 -112px");
+    //   var img = doc.createElement("img");
+    //   img.setAttribute("src", "file://"+process.cwd() + "/loading.gif");
+    //   img.setAttribute("width", 224);
+    //   img.setAttribute("height", 168);
+    //   div.appendChild(img);
 
-      if (body.length)
-        body[0].appendChild(div);
-      else
-        doc.documentElement.appendChild(div);
-    }
+    //   if (body.length)
+    //     body[0].appendChild(div);
+    //   else
+    //     doc.documentElement.appendChild(div);
+    // }
   </script>
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(client) app/vendor.css -->
@@ -52,17 +52,17 @@
   <link rel="stylesheet" href="app/app.css">
   <!-- injector:css -->
   <link rel="stylesheet" href="app/app.css">
+  <link rel="stylesheet" href="app/carManage/index.css">
+  <link rel="stylesheet" href="app/carManage/views/add.css">
+  <link rel="stylesheet" href="app/carManage/views/commute/commute.css">
+  <link rel="stylesheet" href="app/carManage/views/custom/customerCheck.css">
+  <link rel="stylesheet" href="app/carManage/views/roomCheck/roomcheck.css">
+  <link rel="stylesheet" href="app/carManage/views/roomCheck/roomcheck_bak.css">
+  <link rel="stylesheet" href="app/carManage/views/setting.css">
+  <link rel="stylesheet" href="app/carManage/views/setting/roomFloor.css">
+  <link rel="stylesheet" href="app/carManage/views/setting/setUp.css">
+  <link rel="stylesheet" href="app/carManage/views/settledOut/settledout.css">
   <link rel="stylesheet" href="app/common/views/userSetting/userCenter.css">
-  <link rel="stylesheet" href="app/roomManage/index.css">
-  <link rel="stylesheet" href="app/roomManage/views/add.css">
-  <link rel="stylesheet" href="app/roomManage/views/commute/commute.css">
-  <link rel="stylesheet" href="app/roomManage/views/customerCheck/customerCheck.css">
-  <link rel="stylesheet" href="app/roomManage/views/roomCheck/roomcheck.css">
-  <link rel="stylesheet" href="app/roomManage/views/roomCheck/roomcheck_bak.css">
-  <link rel="stylesheet" href="app/roomManage/views/setting.css">
-  <link rel="stylesheet" href="app/roomManage/views/setting/roomFloor.css">
-  <link rel="stylesheet" href="app/roomManage/views/setting/setUp.css">
-  <link rel="stylesheet" href="app/roomManage/views/settledOut/settledout.css">
   <link rel="stylesheet" href="components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css">
   <link rel="stylesheet" href="components/angular-city-select/angular-city-select.css">
   <link rel="stylesheet" href="components/citypicker/ngCityPicker.css">
@@ -152,8 +152,32 @@
   <script src="components/ng-notify/ng-notify.js"></script>
   <script src="components/pagination/tm.pagination.js"></script>
   <script src="components/vehicleNum/ngVehicleNum.js"></script>
+  <script src="app/carManage/index.js"></script>
   <script src="app/common/index.js"></script>
-  <script src="app/roomManage/index.js"></script>
+  <script src="app/carManage/controllers/addctrl.js"></script>
+  <script src="app/carManage/controllers/commute/roomcommutectrl.js"></script>
+  <script src="app/carManage/controllers/customerCheck/customerCheck.js"></script>
+  <script src="app/carManage/controllers/goodsInstallCtrl.js"></script>
+  <script src="app/carManage/controllers/roomCheck/roomcheck.js"></script>
+  <script src="app/carManage/controllers/setting/addLayer.js"></script>
+  <script src="app/carManage/controllers/setting/addRoom.js"></script>
+  <script src="app/carManage/controllers/setting/addbuilding.js"></script>
+  <script src="app/carManage/controllers/setting/editRoom.js"></script>
+  <script src="app/carManage/controllers/setting/list.js"></script>
+  <script src="app/carManage/controllers/setting/setUp.js"></script>
+  <script src="app/carManage/controllers/settingctrl.js"></script>
+  <script src="app/carManage/controllers/settledOut/changeHouses.js"></script>
+  <script src="app/carManage/controllers/settledOut/checkIn.js"></script>
+  <script src="app/carManage/controllers/settledOut/checkInOut.js"></script>
+  <script src="app/carManage/controllers/settledOut/checkOut.js"></script>
+  <script src="app/carManage/controllers/settledOut/checkState.js"></script>
+  <script src="app/carManage/controllers/settledOut/extend.js"></script>
+  <script src="app/carManage/controllers/settledOut/fillCard.js"></script>
+  <script src="app/carManage/controllers/settledOut/settledout.js"></script>
+  <script src="app/carManage/controllers/updateCtrl.js"></script>
+  <script src="app/carManage/services/mockData/mockStallData.js"></script>
+  <script src="app/carManage/services/roomCheckServices.js"></script>
+  <script src="app/carManage/services/roomManageService.js"></script>
   <script src="app/common/controllers/login.js"></script>
   <script src="app/common/controllers/userSetting/changePassword.js"></script>
   <script src="app/common/controllers/userSetting/historyLeave.js"></script>
@@ -162,41 +186,17 @@
   <script src="app/common/filters/moment_filters.js"></script>
   <script src="app/common/services/systemAppService.js"></script>
   <script src="app/common/services/userSettingService.js"></script>
-  <script src="app/roomManage/controllers/addctrl.js"></script>
-  <script src="app/roomManage/controllers/commute/roomcommutectrl.js"></script>
-  <script src="app/roomManage/controllers/customerCheck/customerCheck.js"></script>
-  <script src="app/roomManage/controllers/goodsInstallCtrl.js"></script>
-  <script src="app/roomManage/controllers/roomCheck/roomcheck.js"></script>
-  <script src="app/roomManage/controllers/setting/addLayer.js"></script>
-  <script src="app/roomManage/controllers/setting/addRoom.js"></script>
-  <script src="app/roomManage/controllers/setting/addbuilding.js"></script>
-  <script src="app/roomManage/controllers/setting/editRoom.js"></script>
-  <script src="app/roomManage/controllers/setting/list.js"></script>
-  <script src="app/roomManage/controllers/setting/setUp.js"></script>
-  <script src="app/roomManage/controllers/settingctrl.js"></script>
-  <script src="app/roomManage/controllers/settledOut/changeHouses.js"></script>
-  <script src="app/roomManage/controllers/settledOut/checkIn.js"></script>
-  <script src="app/roomManage/controllers/settledOut/checkInOut.js"></script>
-  <script src="app/roomManage/controllers/settledOut/checkOut.js"></script>
-  <script src="app/roomManage/controllers/settledOut/checkState.js"></script>
-  <script src="app/roomManage/controllers/settledOut/extend.js"></script>
-  <script src="app/roomManage/controllers/settledOut/fillCard.js"></script>
-  <script src="app/roomManage/controllers/settledOut/settledout.js"></script>
-  <script src="app/roomManage/controllers/updateCtrl.js"></script>
-  <script src="app/roomManage/services/mockData/mockStallData.js"></script>
-  <script src="app/roomManage/services/roomCheckServices.js"></script>
-  <script src="app/roomManage/services/roomManageService.js"></script>
   <!-- endinjector -->
   <!-- endbuild -->
 </body>
 <script type="text/javascript">
-  if (process) {
-    $(document).ready(function() {
-      var loading_blank = document.getElementById("loading_blank");
-      if (loading_blank) {
-        document.documentElement.removeChild(loading_blank);
-      }
-    });
-  }
+  // if (process) {
+  //   $(document).ready(function() {
+  //     var loading_blank = document.getElementById("loading_blank");
+  //     if (loading_blank) {
+  //       document.documentElement.removeChild(loading_blank);
+  //     }
+  //   });
+  // }
 </script>
 </html>

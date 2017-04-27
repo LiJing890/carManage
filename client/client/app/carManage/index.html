@@ -1,0 +1,20 @@
+<!--<div ng-include="'components/header/header.html'"></div>-->
+<div class="left-nav">
+  <ul class="left-nav-box" ng-controller="carManageIndexCtrl">
+   <li class="left-nav-menu-title"><i class="fa fa-list"></i> 菜单列表</li>
+   <li  ng-class="{'left-nav-active': isActive('/carManage/custom')}"><a href="/carManage/custom" ui-sref=".custom"><i class="icon-chevron-right"></i>客户信息</a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/carManage/customerCheck')}"><a href="/carManage/customerCheck" ui-sref=".customerCheck"><i class="icon-chevron-right"></i>人员查询</a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/carManage/setting')}"><a href="/carManage/setting" ui-sref=".setting"><i class="icon-chevron-right"></i>房型设置</a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/carManage/roomFloor')}"><a href="/carManage/roomFloor" ui-sref=".roomFloor"><i class="icon-chevron-right"></i>客房设置</a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/carManage/setUp')}"><a href="/carManage/setUp" ui-sref=".setUp"><i class="icon-chevron-right"></i></a></li>
+
+   <li  ng-class="{'left-nav-active': isActive('/carManage/commute')}"><a href="/carManage/commute" ui-sref=".commute"><i class="icon-chevron-right"></i></a></li>
+
+  </ul>
+</div>
+<div  id="right-content" class="right-content" ui-view></div>
+<!--<div ng-include="'components/navbar/navbar.html'"></div>-->
